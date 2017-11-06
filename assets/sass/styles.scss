@@ -4,7 +4,7 @@ $desktopBP: 968px;
 
 $primary: rgb(195, 195, 195);
 $secondary: rgb(181, 181, 181);
-$background: rgb(221, 221, 221);
+$background: rgb(96,96,121);
 $fontColor: rgb(32, 31, 41);
 
 body {
@@ -17,6 +17,7 @@ body {
     color: $fontColor;
     width: 80%;
     margin: 0 auto;
+    font-family: 'PT Sans', sans-serif;
 
     @media (min-width: $phoneBP) {
         font-size: 16px;
@@ -39,7 +40,8 @@ section {
         color: $fontColor;
         
         .header {
-            border-bottom: solid 2px $secondary;
+            border-bottom: solid 4px $fontColor;
+            padding: 0.5em;
         }
     }
 
@@ -64,10 +66,10 @@ section {
     align-items: center;
     flex-direction: column;
     background: 
-        radial-gradient(transparent, rgba(0,0,0,.9)),
+        radial-gradient(rgba(195, 195, 195, 0.4), rgb(195, 195, 195) 70%),
         url(../header_hero.jpg) center center no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 50%;
 
     .header {
         font-size: 3em;
