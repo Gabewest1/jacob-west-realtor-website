@@ -2,13 +2,21 @@ $phoneBP: 480px;
 $tabletBP: 768px;
 $desktopBP: 968px;
 
-$primary: #232124;
-$secondary: white;
+$primary: rgb(195, 195, 195);
+$secondary: rgb(181, 181, 181);
+$background: rgb(221, 221, 221);
+$fontColor: rgb(32, 31, 41);
 
 body {
+    background: $background;
+}
+
+.wrapper {
     margin: 0;
     padding: 0;
-    color: $secondary;
+    color: $fontColor;
+    width: 80%;
+    margin: 0 auto;
 
     @media (min-width: $phoneBP) {
         font-size: 16px;
@@ -24,12 +32,11 @@ body {
 }
 
 section {
-    padding-top: 40px;
-    padding-left: 20px;
+    padding: 2em 1em;
 
     &:nth-child(odd) {
         background-color: $primary;
-        color: $secondary;
+        color: $fontColor;
         
         .header {
             border-bottom: solid 2px $secondary;
@@ -38,7 +45,7 @@ section {
 
     &:nth-child(even) {
         background-color: $secondary;
-        color: $primary;
+        color: $fontColor;
 
         .header {
             border-bottom: solid 2px $primary;
@@ -64,24 +71,49 @@ section {
 
     .header {
         font-size: 3em;
-        color: $primary;
+        color: $fontColor;
     }
 }
 
 .about {    
-    height: 300px;
+    display: flex;
+    
+    .img-container {
+        display: flex;
+        align-items: center;
+        margin-left: 1em;
+        width: auto;
+        max-width: 500px;
+        flex-shrink: 0;
+    }
 
     .header {
         
     }
-
+    
     .content {
+        
+    }
 
+    @media (min-width: $desktopBP) {
+        .img-container {
+            width: 400px;
+        }
+    }
+    @media (max-width: $tabletBP) {
+        .stack {
+            flex-direction: column;
+            align-items: center;
+
+            &.reverse {
+                flex-direction: column-reverse;
+            }
+        }
     }
 }
 
 .contact {
-    
+
     .form {
         width: 50%;
     
@@ -116,7 +148,17 @@ section {
 .column {
     flex-direction: column;
 }
+.stack {
+    display: flex;
 
+    @media (max-width: $phoneBP) {
+        flex-direction: column;
+
+        &.reverse {
+            flex-direction: column-reverse;
+        }
+    }
+}
 .img {
     max-width: 100%;
     max-height: 100%;
